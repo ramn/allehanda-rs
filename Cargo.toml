@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["ramn <github@rymdimperiet.org>"]
 description = "Miscellaneous data structures and algorithms"
 
-#documentation = ""
+documentation = "https://docs.rs/allehanda"
 homepage = "https://github.com/ramn/allehanda-rs"
 repository = "https://github.com/ramn/allehanda-rs"
 readme = "README.md"
