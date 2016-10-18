@@ -1,0 +1,6 @@
+[package]
+name = "allehanda"
+version = "0.1.0"
+authors = ["ramn <github@rymdimperiet.org>"]
+
+[dependencies]
