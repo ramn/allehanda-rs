@@ -2,5 +2,13 @@
 name = "allehanda"
 version = "0.1.0"
 authors = ["ramn <github@rymdimperiet.org>"]
+description = "Miscellaneous data structures and algorithms"
+
+#documentation = ""
+homepage = "https://github.com/ramn/allehanda-rs"
+repository = "https://github.com/ramn/allehanda-rs"
+readme = "README.md"
+license = "MIT/Apache-2.0"
+keywords = []
 
 [dependencies]
