@@ -34,10 +34,7 @@ impl<'a> Graph<'a> for AdjacencyGraph {
 
 impl AdjacencyGraph {
     pub fn with_vertex_count(vertex_count: usize) -> AdjacencyGraph {
-        let mut adjacents = Vec::with_capacity(vertex_count);
-        for _ in 0..vertex_count {
-            adjacents.push(vec![]);
-        }
+        let adjacents = vec![vec![]; vertex_count];
         AdjacencyGraph {
             vertex_count: vertex_count,
             edge_count: 0,
