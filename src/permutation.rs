@@ -1,11 +1,16 @@
 /// Mutates into lexicographical permutation
 pub fn permute(xs: &mut [usize]) {
-    let i = xs.iter().zip(xs.iter().skip(1)).enumerate()
-        .fold(0, |memo, (i, (a, b))| if a < b { i } else { memo });
-    let j = xs.iter().enumerate()
-        .fold(0, |memo, (j, a)| if a > &xs[i] { j } else { memo });
-    xs.swap(i, j);
-    xs[i+1..].reverse();
+    let i_opt = xs.iter().zip(xs.iter().skip(1)).enumerate()
+        .fold(None, |memo, (i, (a, b))| if a < b { Some(i) } else { memo });
+    if let Some(i) = i_opt {
+        let j = xs.iter().enumerate()
+            .fold(0, |memo, (j, a)| if a > &xs[i] { j } else { memo });
+        xs.swap(i, j);
+        xs[i+1..].reverse();
+    } else {
+        // we are on the last lexicographical permutation. Start over..
+        xs.reverse();
+    }
 }
 
 /// Returns next lexicographical permutation
@@ -60,5 +65,10 @@ mod tests {
         for (a, b) in EXPECTED_LIST.iter().zip(EXPECTED_LIST.iter().skip(1)) {
             assert_eq!(next_permutation(a), b.to_vec());
         }
+    }
+
+    #[test]
+    fn test_last_permutation() {
+        assert_eq!(next_permutation(&[4,3,2,1]), [1,2,3,4].to_vec());
     }
 }
