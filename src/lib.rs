@@ -1,4 +1,3 @@
-pub mod macros;
 pub mod collection;
 pub mod graph;
 pub mod list;
